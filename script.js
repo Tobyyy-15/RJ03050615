@@ -13,6 +13,7 @@ unlockBtn.addEventListener("click", () => {
     }
 });
 
+
 const pages = document.querySelectorAll(".book .page");
 let currentPage = 0;
 
@@ -21,7 +22,7 @@ pages.forEach((page, index) => {
   page.style.zIndex = pages.length - index;
 });
 
-// Function to flip to next page
+
 function nextPage() {
   if (currentPage < pages.length) {
     pages[currentPage].classList.add("flipped");
@@ -29,7 +30,7 @@ function nextPage() {
   }
 }
 
-// Function to flip to previous page
+
 function prevPage() {
   if (currentPage > 0) {
     currentPage--;
@@ -41,13 +42,24 @@ function prevPage() {
 document.getElementById("next").addEventListener("click", nextPage);
 document.getElementById("prev").addEventListener("click", prevPage);
 
-// ------------------------
-// BACKGROUND MUSIC PLAYER
-// ------------------------
+
 const music = document.getElementById("bg-music");
 const icon = document.getElementById("music-icon");
 
 let isPlaying = false;
+
+// Attempt to autoplay music on page load
+window.addEventListener('load', () => {
+  music.play().then(() => {
+    isPlaying = true;
+    icon.style.opacity = 1; // full brightness
+  }).catch(() => {
+    // Autoplay blocked by browser → user must click icon
+    isPlaying = false;
+    icon.style.opacity = 0.5;
+  });
+});
+
 
 document.getElementById("music-player").addEventListener("click", () => {
   if (isPlaying) {
