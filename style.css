@@ -1,71 +1,93 @@
-body {
+body { 
   background: #111;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: 'Patrick Hand', cursive;
+  font-family: Georgia, serif;
   margin: 0;
 }
 
+/* Book container */
 .book {
   width: 320px;
   height: 480px;
   position: relative;
   perspective: 2000px;
+  transform-style: preserve-3d;  /* force GPU 3D context */
+  transform: translateZ(0);      /* prevent black flashes */
 }
 
+/* Page container */
 .page {
   width: 100%;
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
   transform-origin: left;
-  transition: transform 0.8s cubic-bezier(0.68,-0.55,0.265,1.55);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   border-radius: 0 12px 12px 0;
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
   overflow: hidden;
-  
+  background-color: white;       /* fallback for black flashes */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
+/* Front and back sides */
 .front, .back {
   width: 100%;
   height: 100%;
   position: absolute;
-  backface-visibility: hidden;
   box-sizing: border-box;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  border-radius: 0 12px 12px 0;
+  background-color: white;       /* fallback */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
+/* Cover page */
 .page:first-child .front.cover {
   background: url('images/cover.jpg') no-repeat center center;
   background-size: cover;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
   z-index: 2;
 }
-.page:not(:first-child) .front {
-  background: pink !important;
-}
-.page:first-child .back,
-.page:not(:first-child) .front,
-.page:not(:first-child) .back {
+
+.page:first-child .back {
   background: url('images/pages.jpg') no-repeat center center;
   background-size: cover;
   transform: rotateY(180deg);
 }
 
-.page.flipped {
-  transform: rotateY(-180deg);
-  box-shadow: -5px 0 25px rgba(0,0,0,0.35);
+/* All other pages */
+.page:not(:first-child) .front,
+.page:not(:first-child) .back {
+  background: url('images/pages.jpg') no-repeat center center;
+  background-size: cover;
 }
 
+.page:not(:first-child) .back {
+  transform: rotateY(180deg); /* important for flipped pages */
+}
+
+/* Flip effect */
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* Images inside pages */
 .page img {
   width: 90%;
   max-height: 60%;
@@ -75,6 +97,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
+/* Text inside page */
 .page p {
   font-family: 'Patrick Hand', cursive;
   font-size: 20px;
@@ -83,6 +106,7 @@ body {
   margin-top: 10px;
 }
 
+/* Navigation buttons */
 button {
   padding: 10px 20px;
   border-radius: 20px;
@@ -100,40 +124,3 @@ button {
 }
 #prev { left: 20px; }
 #next { right: 20px; }
-
-#password-screen {
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:#111;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  z-index:1000;
-}
-
-#password-screen input {
-  padding:10px;
-  font-size:18px;
-  margin:10px;
-}
-
-#password-screen button {
-  padding:10px 20px;
-  font-size:18px;
-  border:none;
-  border-radius:10px;
-  background:pink;
-  color:#111;
-  cursor:pointer;
-}
-
-#error-msg {
-  color:red;
-  display:none;
-  margin-top:10px;
-}
-
-
