@@ -1,4 +1,3 @@
-/* General body */
 body {
   background: #111;
   display: flex;
@@ -9,7 +8,97 @@ body {
   margin: 0;
 }
 
-/* Password screen */
+.book {
+  width: 320px;
+  height: 480px;
+  position: relative;
+  perspective: 2000px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.68,-0.55,0.265,1.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.page:first-child .front.cover {
+  background: url('images/cover.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.page:first-child .back,
+.page:not(:first-child) .front,
+.page:not(:first-child) .back {
+  background: url('images/pages.jpg') no-repeat center center;
+  background-size: cover;
+  transform: rotateY(180deg);
+}
+
+.page.flipped {
+  transform: rotateY(-180deg);
+  box-shadow: -5px 0 25px rgba(0,0,0,0.35);
+}
+
+.page img {
+  width: 90%;
+  max-height: 60%;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.page p {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 20px;
+  color: #B00059;
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: pink;
+  font-size: 18px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+#prev, #next {
+  position: fixed;
+  bottom: 20px;
+  font-size: 24px;
+}
+#prev { left: 20px; }
+#next { right: 20px; }
+
+/* PASSWORD SCREEN */
 #password-screen {
   position: fixed;
   top:0; left:0;
@@ -39,121 +128,8 @@ body {
   cursor:pointer;
 }
 
-#password-screen p {
+#error-msg {
   color:red;
   display:none;
   margin-top:10px;
 }
-
-/* Book container */
-.book {
-  width: 320px;
-  height: 480px;
-  position: relative;
-  perspective: 2000px;
-}
-
-/* Page container */
-.page {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transform-origin: left;
-  transition: transform 0.8s cubic-bezier(0.4,0,0.2,1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 12px 12px 0;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* Front and back sides */
-.front, .back {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  box-sizing: border-box;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  border-radius: 0 12px 12px 0;
-}
-
-/* Cover front */
-.page:first-child .front.cover {
-  background: url('./images/cover.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
-  text-align: center;
-  padding-top: 150px;
-  z-index:2;
-}
-
-/* Cover back */
-.page:first-child .back {
-  background: url('./images/pages.jpg') no-repeat center center;
-  background-size: cover;
-  transform: rotateY(180deg);
-}
-
-/* Other front pages */
-.page:not(:first-child) .front {
-  background: url('./images/pages.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-/* Other back pages */
-.page:not(:first-child) .back {
-  background: url('./images/pages.jpg') no-repeat center center;
-  background-size: cover;
-  transform: rotateY(180deg);
-}
-
-/* Flipped page */
-.page.flipped {
-  transform: rotateY(-180deg);
-}
-
-/* Images inside pages */
-.page img {
-  width: 90%;
-  max-height: 60%;
-  object-fit: contain;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-/* Text inside pages */
-.page p {
-  font-size:20px;
-  color:#B00059;
-  text-align:center;
-  margin-top:10px;
-}
-
-/* Navigation buttons */
-button {
-  padding:10px 20px;
-  border-radius:20px;
-  border:none;
-  background:pink;
-  font-size:18px;
-  margin:5px;
-  cursor:pointer;
-}
-
-#prev, #next {
-  position: fixed;
-  bottom:20px;
-  font-size:24px;
-}
-#prev { left:20px; }
-#next { right:20px; }
