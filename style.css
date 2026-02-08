@@ -1,3 +1,4 @@
+/* BODY */
 body { 
   background: #111;
   display: flex;
@@ -8,22 +9,36 @@ body {
   margin: 0;
 }
 
-/* Book container */
+/* PASSWORD SCREEN — untouched, stays fixed */
+#password-screen {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#111;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  z-index:1000; /* always above notebook */
+}
+
+/* BOOK CONTAINER */
 .book {
   width: 320px;
   height: 480px;
   position: relative;
-  perspective: 2000px;
-  transform-style: preserve-3d;  /* force GPU 3D context */
-  transform: translateZ(0);      /* prevent black flashes */
+  perspective: 2000px;           /* notebook 3D context */
 }
 
-/* Page container */
-.page {
+/* PAGES ONLY */
+.book .page {
   width: 100%;
   height: 100%;
   position: absolute;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d;  /* GPU 3D */
   transform-origin: left;
   transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
@@ -33,29 +48,38 @@ body {
   border-radius: 0 12px 12px 0;
   box-shadow: 0 12px 24px rgba(0,0,0,0.3);
   overflow: hidden;
-  background-color: white;       /* fallback for black flashes */
+  background-color: white;        /* fallback to prevent black pages */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
-/* Front and back sides */
-.front, .back {
+/* FRONT AND BACK */
+.book .page .front, 
+.book .page .back {
   width: 100%;
   height: 100%;
   position: absolute;
-  box-sizing: border-box;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   border-radius: 0 12px 12px 0;
-  background-color: white;       /* fallback */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
-/* Cover page */
+/* BACK ROTATION */
+.book .page .back {
+  transform: rotateY(180deg);
+}
+
+/* FLIP EFFECT */
+.book .page.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* COVER PAGE AND OTHER PAGE BACKGROUNDS */
 .page:first-child .front.cover {
   background: url('images/cover.jpg') no-repeat center center;
   background-size: cover;
@@ -65,29 +89,14 @@ body {
   z-index: 2;
 }
 
-.page:first-child .back {
-  background: url('images/pages.jpg') no-repeat center center;
-  background-size: cover;
-  transform: rotateY(180deg);
-}
-
-/* All other pages */
+.page:first-child .back,
 .page:not(:first-child) .front,
 .page:not(:first-child) .back {
   background: url('images/pages.jpg') no-repeat center center;
   background-size: cover;
 }
 
-.page:not(:first-child) .back {
-  transform: rotateY(180deg); /* important for flipped pages */
-}
-
-/* Flip effect */
-.page.flipped {
-  transform: rotateY(-180deg);
-}
-
-/* Images inside pages */
+/* IMAGE INSIDE PAGES */
 .page img {
   width: 90%;
   max-height: 60%;
@@ -97,7 +106,7 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Text inside page */
+/* TEXT */
 .page p {
   font-family: 'Patrick Hand', cursive;
   font-size: 20px;
@@ -106,7 +115,7 @@ body {
   margin-top: 10px;
 }
 
-/* Navigation buttons */
+/* NAVIGATION BUTTONS */
 button {
   padding: 10px 20px;
   border-radius: 20px;
