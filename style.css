@@ -50,7 +50,9 @@ body {
   background-size: cover;
   z-index: 2;
 }
-
+.page:not(:first-child) .front {
+  background: pink !important;
+}
 .page:first-child .back,
 .page:not(:first-child) .front,
 .page:not(:first-child) .back {
@@ -133,4 +135,5 @@ button {
   display:none;
   margin-top:10px;
 }
+
 
