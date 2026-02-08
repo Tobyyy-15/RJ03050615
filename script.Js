@@ -1,12 +1,12 @@
 const pages = document.querySelectorAll(".page");
 let currentPage = 0;
 
-// Set initial z-index so pages stack correctly
+// Stack pages properly
 pages.forEach((page, index) => {
   page.style.zIndex = pages.length - index;
 });
 
-// Next page
+// Flip page functions
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.add("flipped");
@@ -14,7 +14,6 @@ function nextPage() {
   }
 }
 
-// Previous page
 function prevPage() {
   if (currentPage > 0) {
     currentPage--;
