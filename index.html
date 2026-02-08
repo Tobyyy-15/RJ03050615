@@ -70,21 +70,26 @@
 
 <script src="script.js"></script>
 <script>
-  // PASSWORD
-  const correctPassword = "ralph";
-  const passwordScreen = document.getElementById("password-screen");
-  const unlockBtn = document.getElementById("unlock-btn");
-  const errorMsg = document.getElementById("error-msg");
+const correctPassword = "ralph";
+const passwordScreen = document.getElementById("password-screen");
+const unlockBtn = document.getElementById("unlock-btn");
+const errorMsg = document.getElementById("error-msg");
 
-  unlockBtn.addEventListener("click", () => {
-      const entered = document.getElementById("book-password").value;
-      if (entered === correctPassword) {
-          passwordScreen.style.display = "none";
-      } else {
-          errorMsg.style.display = "block";
-      }
-  });
+unlockBtn.addEventListener("click", () => {
+  const entered = document.getElementById("book-password").value;
+  
+  if (entered === correctPassword) {
+    passwordScreen.style.display = "none";
+    
+    // IMPORTANT: start book AFTER unlock
+    initBook();
+  } else {
+    errorMsg.style.display = "block";
+  }
+});
 </script>
+
 
 </body>
 </html>
+
