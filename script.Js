@@ -1,26 +1,39 @@
-const pages = document.querySelectorAll(".page");
+let pages;
 let currentPage = 0;
 
-// Stack pages properly
-pages.forEach((page, index) => {
-  page.style.zIndex = pages.length - index;
-});
+function initBook() {
+  pages = document.querySelectorAll(".page");
 
-// Flip page functions
+  // stack pages
+  pages.forEach((page, index) => {
+    page.style.zIndex = pages.length - index;
+    page.classList.remove("flipped");
+  });
+
+  currentPage = 0;
+}
+
 function nextPage() {
-  if (currentPage < pages.length - 1) {
-    pages[currentPage].classList.add("flipped");
-    currentPage++;
-  }
+  if (currentPage >= pages.length) return;
+  pages[currentPage].classList.add("flipped");
+  currentPage++;
+  updateZ();
 }
 
 function prevPage() {
-  if (currentPage > 0) {
-    currentPage--;
-    pages[currentPage].classList.remove("flipped");
-  }
+  if (currentPage <= 0) return;
+  currentPage--;
+  pages[currentPage].classList.remove("flipped");
+  updateZ();
 }
 
-// Button listeners
-document.getElementById("next").addEventListener("click", nextPage);
-document.getElementById("prev").addEventListener("click", prevPage);
+function updateZ() {
+  pages.forEach((page, index) => {
+    page.style.zIndex = (index < currentPage) ? index : pages.length - index;
+  });
+}
+
+document.getElementById("next").onclick = nextPage;
+document.getElementById("prev").onclick = prevPage;
+
+
