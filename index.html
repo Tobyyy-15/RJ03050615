@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Love Book</title>
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -27,8 +27,8 @@
   <!-- PAGE 1 -->
   <div class="page">
     <div class="front">
-      <img src="./images/pic1.jpg" alt="Pic 1">
-      <p>Ever since i saw you i knew you were different. I was so intrigued by you i kept on stealing a glance, your smile really snared me, your beautiful face enticed me, and your strong personality amazed me.</p>
+      <img src="images/pic1.jpg" alt="Pic 1">
+      <p>Ever since I saw you… your strong personality amazed me.</p>
     </div>
     <div class="back blank-page"></div>
   </div>
@@ -36,8 +36,8 @@
   <!-- PAGE 2 -->
   <div class="page">
     <div class="front">
-      <img src="./images/pic2.jpg" alt="Pic 2">
-      <p>You slowly took over my thoughts and became my inspiration. Going to work feels different now—just the thought of seeing you makes it exciting. And before I knew it, you had taken over my heart. I fell in love with you.</p>
+      <img src="images/pic2.jpg" alt="Pic 2">
+      <p>You slowly took over my thoughts… I fell in love with you.</p>
     </div>
     <div class="back blank-page"></div>
   </div>
@@ -45,8 +45,8 @@
   <!-- PAGE 3 -->
   <div class="page">
     <div class="front">
-      <img src="./images/pic3.jpg" alt="Pic 3">
-      <p>You are truly amazing. The more time I spend with you, the deeper my love grows. I want you to be mine forever, and I dream of marrying you someday. I promise I’ll do everything I can to make that dream come true. I love you so much.</p>
+      <img src="images/pic3.jpg" alt="Pic 3">
+      <p>You are truly amazing… I love you so much.</p>
     </div>
     <div class="back blank-page"></div>
   </div>
@@ -54,8 +54,7 @@
   <!-- FINAL PAGE -->
   <div class="page">
     <div class="front final">
-      <p>I know the road is rough, the ride is shaky, there are storms ahead but please stay with me. There seems to have no destination without you; you are my compass. Life has no direction without you. I will do my best to be better for you. I will keep on loving you. You are my dream. You are the love of my life. I love you.</p>
-      <p>I know you're not free this Feb 14, I will ask you anyway. Will you be my Valentine? 💖</p>
+      <p>I know the road is rough… Will you be my Valentine? 💖</p>
       <p>❤️ FOREVER ❤️</p>
     </div>
     <div class="back final">
@@ -69,24 +68,22 @@
 <button id="prev">⬅</button>
 <button id="next">➡</button>
 
-<script src="./script.js"></script>
-
-<!-- PASSWORD SCRIPT -->
+<script src="script.js"></script>
 <script>
-const correctPassword = "ralph"; // set your password
-const passwordScreen = document.getElementById("password-screen");
-const unlockBtn = document.getElementById("unlock-btn");
-const errorMsg = document.getElementById("error-msg");
+  // PASSWORD
+  const correctPassword = "ralph";
+  const passwordScreen = document.getElementById("password-screen");
+  const unlockBtn = document.getElementById("unlock-btn");
+  const errorMsg = document.getElementById("error-msg");
 
-unlockBtn.addEventListener("click", () => {
-    const entered = document.getElementById("book-password").value;
-    if (entered === correctPassword) {
-        passwordScreen.style.display = "none";
-    } else {
-        errorMsg.style.display = "block";
-    }
-});
+  unlockBtn.addEventListener("click", () => {
+      const entered = document.getElementById("book-password").value;
+      if (entered === correctPassword) {
+          passwordScreen.style.display = "none";
+      } else {
+          errorMsg.style.display = "block";
+      }
+  });
 </script>
-
 </body>
 </html>
