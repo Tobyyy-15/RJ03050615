@@ -21,7 +21,7 @@ body {
   position: absolute;
   transform-style: preserve-3d;
   transform-origin: left;
-  transition: transform 0.9s cubic-bezier(0.68,-0.55,0.265,1.55);
+  transition: transform 0.8s cubic-bezier(0.68,-0.55,0.265,1.55);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,7 +98,6 @@ button {
 #prev { left: 20px; }
 #next { right: 20px; }
 
-/* PASSWORD SCREEN */
 #password-screen {
   position: fixed;
   top:0; left:0;
