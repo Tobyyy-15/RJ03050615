@@ -6,7 +6,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<!-- MUSIC PLAYER -->
 <div id="music-player" style="position: fixed; top: 20px; right: 20px; z-index: 1100; cursor: pointer;">
   <img id="music-icon" src="images/mp3-icon.png" alt="Music" style="width:40px; height:40px;">
 </div>
@@ -14,17 +17,18 @@
 <audio id="bg-music" loop>
   <source src="music/enchanted.mp3" type="audio/mpeg">
 </audio>
+
 <!-- PASSWORD SCREEN -->
 <div id="password-screen">
   <h2>Name of the person you love</h2>
   <input type="password" id="book-password" placeholder="all small letters">
   <button id="unlock-btn">Unlock</button>
-  <p id="error-msg">Incorrect password!</p>
+  <p id="error-msg" style="display:none;">Incorrect password!</p>
 </div>
 
 <div class="book">
 
-  <!-- COVER PAGE -->
+  <!-- COVER -->
   <div class="page">
     <div class="front cover"></div>
     <div class="back blank-page"></div>
@@ -34,7 +38,7 @@
   <div class="page">
     <div class="front">
       <img src="images/pic1.jpg" alt="Pic 1">
-      <p>Ever since i saw you i knew you were different. I was so intrigued by you i kept on stealing a glance, your smile really snared me, your beautiful face enticed me, and your strong personality amazed me. </p>
+      <p>Ever since I saw you, I knew you were different. I was so intrigued by you. I kept stealing glances. Your smile snared me, your beautiful face enticed me, and your strong personality amazed me.</p>
     </div>
     <div class="back blank-page"></div>
   </div>
@@ -43,7 +47,7 @@
   <div class="page">
     <div class="front">
       <img src="images/pic2.jpg" alt="Pic 2">
-      <p>You slowly took over my thoughts and became my inspiration. Going to work feels different now—just the thought of seeing you makes it exciting. And before I knew it, you had taken over my heart. I fell in love with you.</p>
+      <p>You slowly took over my thoughts and became my inspiration. Going to work feels different now—just the thought of seeing you makes it exciting. Before I knew it, you had taken over my heart. I fell in love with you.</p>
     </div>
     <div class="back blank-page"></div>
   </div>
@@ -56,111 +60,84 @@
     </div>
     <div class="back blank-page"></div>
   </div>
+
   <!-- PAGE 4 -->
   <div class="page">
     <div class="front">
       <img src="images/pic4.jpg" alt="Pic 4">
-      <p>If I ever disappoint you, please forgive me. I never intend to hurt you. I will do my best to avoid misunderstandings and grow for us. Please don’t leave me, my world feels lost without you. Don’t give up on us. I promise to become better for you and for us.</p>
+      <p>If I ever disappoint you, please forgive me. I never intend to hurt you. I will do my best to grow for us. Please don’t give up on us. I promise to become better for you and for us.</p>
+    </div>
+    <div class="back blank-page"></div>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page">
+    <div class="front final">
+      <p>I know the road is rough and storms may come, but please stay with me. You are my compass. Life has no direction without you. I will keep loving you. You are my dream. You are the love of my life.</p>
+      <p>Let us face every storm together, hand in hand.</p>
+      <p>Will you be my Valentine? 💖</p>
+      <p>❤️ FOREVER ❤️</p>
+    </div>
+    <div class="back blank-page"></div>
+  </div>
+
+  <!-- PAGE 6 -->
+  <div class="page">
+    <div class="front">
+      <p>I don't know if you'll open this again. I know nag-away nanaman tayo. It hurts but I still want to fight for us. I'm asking for more understanding. Ikaw na talaga. I love youuuu. Updated: 2/9/2026</p>
+    </div>
+    <div class="back blank-page"></div>
+  </div>
+
+  <!-- PAGE 7 -->
+  <div class="page">
+    <div class="front">
+      <img src="images/pic5.jpg" alt="Pic 5">
+      <p>Just woke up this afternoon, still not feeling well. I'm thankful you replied. My heart is longing to see you. I miss you so much. Update: 2/10/2026</p>
+    </div>
+    <div class="back blank-page"></div>
+  </div>
+
+  <!-- PAGE 8 -->
+  <div class="page">
+    <div class="front">
+      <p>Heavy. So heavy. I thought we'd be better this time. But the same day you promised was the same day it broke. Are promises meaningless? I thought you changed.</p>
+    </div>
+    <div class="back blank-page"></div>
+  </div>
+
+  <!-- PAGE 9 -->
+  <div class="page">
+    <div class="front">
+      <p>You always invalidate my feelings. When I say I'm hurt, you get angry instead of helping me understand. I'm exhausted. I'm sorry. I'm done crying.</p>
+    </div>
+    <div class="back blank-page"></div>
+  </div>
+
+  <!-- PAGE 10 -->
+  <div class="page">
+    <div class="front">
+      <p>I decided to end it. I love you, but I cannot see the future like this. It was hard, but maybe it's what we both need.</p>
     </div>
     <div class="back blank-page"></div>
   </div>
 
   <!-- FINAL PAGE -->
   <div class="page">
-    <div class="front final">
-      <p>I know the road is rough, the ride is shaky, there are storms ahead but please Stay with me bear with me , there seems to have no destination without you. you're my compass. life have no direction without you. I will do my best to be better for you. I will keep on loving you. you are my dream . you are the love of my life. I love you.</p>
-      <p>Let us face the storms together,hand in hand through every trial and conquer anything the world may throw our way.</p>
-      <p>I know you're not free this Feb 14, I will ask you anyway. Will you be my Valentine? 💖</p>
-      <p>❤️ FOREVER ❤️</p>
-    </div>
-  </div>
-        <!-- PAGE 6 -->
-  <div class="page">
     <div class="front">
-      <p>I don't know if you're going to open this again after seeing it once. I know nagaway nanaman tayo. kind of hurts but strangely I want to fight for us even more. I'm afraid na if i get work yung pagaaway nten will be more frequent that's why if you ever read this i'm begging and asking for a bit more understanding. Uu nasasaktan ako pero this time i want to fight for it more. Ikaw na talaga hehe. One day I do hope to shatter that wall you created I'm Optimistic you'll lower your guard for me for me to see your soft/sweet side. I Love youuuu. updated : 2/9/2026</p>
+      <img src="images/sunset.jpg" alt="Sunset">
+      <p>Sunset is beautiful, isn't it?</p>
     </div>
     <div class="back blank-page"></div>
   </div>
 
-                <!-- PAGE 7 -->
-  <div class="page">
-    <div class="front">
-      <img src="images/pic5.jpg" alt="Pic 5">
-      <p>Just woke up this afternoon, sama paden ng pakiramdam ko and I'm Thankful you still replied to me. idk if galit ka or what but i'm relieved na you're here. Still unwell but i want to at least see your face. My heart is longing to see you. I missed you so much. I do hope wala na tayong away in the future. I do hope you overcome na yung tampo tampo. i Hope balang araw masaya nalang tayo. update: 2/10/2026</p>
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-<!-- PAGE 7 -->
- <div class="page">
-    <div class="front">
-       <p>heavy. so heavy.I thought na we'll be better na this time around. pero nung day 1 lang pala. the same day you promised the same day you broke that promise and went back on your words kasi nagtatampo ka. are promises that meaningless to you? na you'll just went back and say " di ko pa pala kaya" kaya ka nga nagpromise eh para kayanin mo. for you to push for it. you haven't changed. you cannot keep your words. you're still treating me unfair. when you reached out to me again i thought you've changed and i thought na maybe this time we can na. </p>
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-  <!-- PAGE 7 -->
-  <div class="page">
-    <div class="front">
-       <p>pero everytime na nagagalit ka lahat ng effort and mabubuting ginawa ko gets thrown out of the window. lahat yun parang walang nangyare and even though wala akong ginawang masama magagalit ka and ipupush mo na galit mo. just like nakaraan nagalit ka kasi they gossip sa office about me. even though you know na i'm not involved antagal ko na wala sa office pero you kept on pushing pden yung issue . i even told you na let's drop the topic kasi wala syang benefit saten. let's just keep being happy and positive. di ko alam goal eh para pagusapan yun di ka naniniwala saken mas naniniwala ka pa sa gossips. you never put your trust on me kahit na i never did anything wrong to you not even once while i put my trust in you kahit na andaming beses mo na nagsinungaling sa akin.
-   </p>
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-  <!-- PAGE 7 -->
-   <div class="page">
-    <div class="front">
-      <p>Sunset is Beautiful Isn't it? </p>
-       <p>yun pa yung masakit eh. kung ano anong inaaccuse mo sakin . matatanggap ko sana kung may nagawa talaga ako dati na panloloko sayo or nagcheat ako pero hindi eh. never kong ginawa sayo yun. actually it was you who lied to me pa nga and sasabihin mo nnmn na brinibringup ko? ehh eto ikaw kahit hindi ko ginawa inaacuse mo ko. i forgave you na eh and you're supposed to make me forget about it by us just being happy. pero hindi eh you're reminding me pa on how you treat me. it hurts. it hurts na i'm the one who got lied to despite that i gave you effort and in exchange i get to be treated like this. i'm sorry di ko na kaya itake yung ugali mo Julie. from what i see you're longing for chaos. i wanted peace i'm sorry. you haven't own to any accountability yet always throwing tantrums to avoid one. i was hoping for a matured relationship. binababy naman kita even wala ung mga tampo tampo. i'm treating you like a princess naman. why do you always need to add chaos. bakit need ng gulo?   </p>
-    </div>
-    <div class="back blank-page"></div>
-   </div>
-  <!-- PAGE 7 -->
-     <div class="page">
-    <div class="front">
-      <p>you always invalidate my feelings. you reacts on my reaction to your action and not fix why i'm hurting. kapag sinabi ko nasasaktan ako magagalit ka sakin imbis na tulungan mo ako </p>
-       <p> i was looking forward pa naman sana sa outing pero di ko deserve na ganito ako itrato eh. mabait akong tao. Idk why is it needed to have this tampo for me to prove i love you. di pa ba evident sa lahat ng ginawa and gagawin ko pa?</p>
-      <p>easy for you to say na "tampo lang" di kasi ikaw yung nanunuyo. haven't you notice na halos araw araw and most of it 3-5 hours tinatagal. you might not notice. and those hours i'm uneasy , my heart aches. it hurts. easy for you to say kasi di mo pa ko sinuyo because i never let you do anything like that. i don't want to make it difficult for you</p>
-        <p>i'm sorry julieta. sobrang naibuhos ko na sarili ko. i cannot continue anymore. ubos na ko.I'm done crying. I'm so sorry</p>
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-  <!-- PAGE 7 -->
-      </ <div class="page">
-    <div class="front">
-      <p>you always invalidate my feelings. you reacts on my reaction to your action and not fix why i'm hurting. kapag sinabi ko nasasaktan ako magagalit ka sakin imbis na tulungan mo ako </p>
-       <p>Last night I decided to finally end it. I would love for this to continue but i cannot see the future if were like this. When you want to start a family you need someone mature.   </p>
-      <p>Until last night signs of manipulation is here and there. all sorry are directed outwards feels like it's really wasn't an apology but a words thrown to make someone feel bad. idk if you learned that with Jolo pero it's not how it's properly done eh.</p>
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-  <!-- PAGE 7 -->
-  <div class="page">
-    <div class="front">
-      <p>Everytime i'm voicing out something you always think it's offensive. you always make it like I said something rude to you. idk  you don't want to recognize things. simply you don't want to change. this is why i made this decision. it was really hard pero it's what we both need. you said you were trying, i just can't feel it. every conversation turns negative every simple things turns to conflict. It's tiring. </p>
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-<!-- PAGE 7 -->
-<div class="page">
-    <div class="front">
-    
-     <p>i'm sorry julieta. sobrang naibuhos ko na sarili ko. i cannot continue anymore. I took your advice. to pour it all out until you're empty and Ubos na ko. I'm letting go kahit na mahirap saken kase in my heart i know mahal na mahal pden kita. pero if we continue masasaktan lang tayo pareho sa dulo.
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-<!-- PAGE 7 -->
-  <div class="page">
-    <div class="front">
-      <img src="images/sunset.jpg" alt="sunset">
-      <p>Sunset is beautiful, Isn't it?</p>
-    </div>
-    <div class="back blank-page"></div>
-  </div>
-  
 </div>
+
 <button id="prev">⬅</button>
 <button id="next">➡</button>
 
 <script src="script.js"></script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -171,9 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   unlockBtn.addEventListener("click", () => {
     const entered = document.getElementById("book-password").value;
+
     if (entered === correctPassword) {
       passwordScreen.style.display = "none";
-      passwordScreen.style.pointerEvents = "none"; // IMPORTANT FIX
     } else {
       errorMsg.style.display = "block";
     }
@@ -182,20 +159,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
